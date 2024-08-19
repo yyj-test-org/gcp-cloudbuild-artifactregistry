@@ -1,6 +1,7 @@
 steps:
   # Docker Build
-  - name: 'Image-Build'
+  # this is the container that would execute our task
+  - name: 'gcr.io/cloud-builders/docker'
     args: [
             'build',
             '-t',
@@ -12,7 +13,7 @@ steps:
             '.'
           ]
   # Docker push to Google Artifact Registry
-  - name: 'Image-Push'
+  - name: 'gcr.io/cloud-builders/docker'
     args: ['push',  'asia-southeast1-docker.pkg.dev/gcp-mlops-images:${SHORT_SHA}']
 
 # Store images in Google Artifact Registry 
