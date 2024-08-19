@@ -5,21 +5,21 @@ steps:
     args: [
             'build',
             '-t',
-            'asia-southeast1-docker.pkg.dev/gcp-mlops-images/my-app:${SHORT_SHA}',
+            'asia-southeast1-docker.pkg.dev/gcp-1-433002/gcp-mlops-images/my-app:${SHORT_SHA}',
             '-t',
-            'asia-southeast1-docker.pkg.dev/gcp-mlops-images/my-app:latest',
+            'asia-southeast1-docker.pkg.dev/gcp-1-433002/gcp-mlops-images/my-app:latest',
             '--cache-from',
-            'asia-southeast1-docker.pkg.dev/gcp-mlops-images/my-app:latest',
+            'asia-southeast1-docker.pkg.dev/gcp-1-433002/gcp-mlops-images/my-app:latest',
             '.'
           ]
   # Docker push to Google Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push',  'asia-southeast1-docker.pkg.dev/gcp-mlops-images/my-app:${SHORT_SHA}']
+    args: ['push',  'asia-southeast1-docker.pkg.dev/gcp-1-433002/gcp-mlops-images/my-app:${SHORT_SHA}']
 
 # Store images in Google Artifact Registry 
 images:
-  - asia-southeast1-docker.pkg.dev/gcp-mlops-images/my-app:${SHORT_SHA}
-  - asia-southeast1-docker.pkg.dev/gcp-mlops-images/my-app:latest
+  - asia-southeast1-docker.pkg.dev/gcp-1-433002/gcp-mlops-images/my-app:${SHORT_SHA}
+  - asia-southeast1-docker.pkg.dev/gcp-1-433002/gcp-mlops-images/my-app:latest
 
 options:
   logging: CLOUD_LOGGING_ONLY
