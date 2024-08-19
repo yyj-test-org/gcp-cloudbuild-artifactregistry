@@ -11,3 +11,4 @@ steps:
             'asia-southeast1-docker.pkg.dev/pub-demo-cb-ar/python-repo/my-app:latest',
             '.'
           ]
+
